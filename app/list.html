@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="log-out">
+        <button type="button"  class="btn btn-danger" name="button" ng-click="logOut()">log out</button>
+      </div>
+      <div class="list">
+        <ul class="tab list-group" >
+          <h2>list of projects</h2>
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="searchText">
+          </form>
+          <li class="tablinks list-group-item list-group-item-action" ng-repeat ="project in lists.projects | filter:searchText" ng-click="selectProjects(project.id)" >
+            {{project.name}}
+          </li>
+        </ul
+      </div>
+      <div class="content-project">
+        <h3>Overview: {{selectProject.name}}</h3>
+        <div class="params">
+          <div class="custom_fields">
+            <ul>
+              <li ng-repeat ="select in selectProject.custom_fields" ng-if="select.value !==''">{{select.name}} : {{select.value}}</li>
+            </ul>
+          </div>
+          <div class="one-parameter">
+            <span>Name:</span>
+            <div class="name">{{selectProject.name}}</div>
+          </div>
+          <div class="one-parameter">
+            <span>Identifier:</span>
+            <div class="name">{{selectProject.identifier}}</div>
+          </div>
+          <div class="one-parameter">
+            <span>Created on:</span>
+            <div class="name">{{selectProject.created_on}}</div>
+          </div>
+          <div class="one-parameter">
+            <span>Updated on:</span>
+            <div class="name">{{selectProject.updated_on}}</div>
+          </div>
+          <div class="one-parameter">
+            <span>Description:</span>
+            <div class="name">{{selectProject.description}}</div>
+          </div>
+          <div class="one-parameter">
+            <span>Comment:</span>
+            <div class="name">{{selectProject.comment}}</div>
+          </div>
+          <div class="add-comment">
+            <input type="text" ng-model="comment" ng-click="ssssts(selectProject.comment)">
+            <button type="button" class="btn btn-success" name="button" ng-click="addComment(selectProject.id)">add comment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <div class="login-form">
+    <form>
+        <h2 class="text-center">Log in</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" required="required" ng-model="name">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" required="required" ng-model="password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" ng-click="login()">Log in</button>
+        </div>
+    </form>
+  </div>
+  <div  ng-if="availabilityLogin == true ">
+    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quam sequi consequatur mollitia veniam enim natus asperiores repellat commodi pariatur exercitationem, aliquam dolore, cum facere facilis voluptatum reprehenderit provident! Et.</h2>
+  </div>
+</div>
