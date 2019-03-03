@@ -32,7 +32,6 @@ mainApp.controller('listController', function($scope, $http, $rootScope) {
     objTuarr.comment = $scope.comment;
     var i = $scope.ArrayComment.findIndex(o => o.id === objTuarr.id);
     if ($scope.ArrayComment[i]) { $scope.ArrayComment[i] = objTuarr } else { $scope.ArrayComment.push(objTuarr) };
-    console.log($scope.ArrayComment);
     localStorage.setItem('Comment',JSON.stringify($scope.ArrayComment));
   };
   $scope.ssssts =function(comment){
